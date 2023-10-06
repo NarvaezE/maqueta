@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UABCS AVISA</title>
+    <style>
+      /* Estilos para el formulario */
+      .form-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff; /* Fondo blanco */
+        padding: 20px;
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombreado */
+      }
+
+      /* Estilos para la primera columna */
+      .column1 {
+        flex: 1;
+        padding: 60px;
+      }
+
+      /* Estilos para la segunda columna */
+      .column2 {
+        flex: 1;
+        padding: 60px;
+        
+      }
+
+      /* Estilos para los elementos del formulario */
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #3498db; /* Color azul claro */
+      }
+
+      /* Estilos para la imagen del mapa */
+      .map-container {
+        width: 100%; /* Asegura que el contenedor abarque todo el ancho disponible */
+        max-width: 300px; /* Establece un ancho máximo para el contenedor del mapa */
+        overflow: hidden; /* Oculta el desbordamiento si la imagen es más grande que el contenedor */
+      }
+
+      .map-img {
+        width: 100%; /* Asegura que la imagen se ajuste al ancho del contenedor */
+        height: auto; /* Mantiene la proporción de aspecto original de la imagen */
+        display: block; /* Elimina cualquier espacio en blanco adicional debajo de la imagen */
+      }
+
+      input[type="text"],
+      textarea,
+      input[type="file"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc; /* Borde */
+        border-radius: 5px; /* Bordes redondeados */
+      }
+
+      button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Estilos para el mapa (simulado) */
+      .map-container {
+        width: 100%;
+        height: 200px;
+        background-color: #f4f4f4;
+      }
+
+      .send-btn {
+        display: block; /* Asegura que el botón sea un elemento en bloque */
+        margin-left: auto; /* Centra el botón horizontalmente */
+        margin-right: auto; /* Centra el botón horizontalmente */
+      }
+      @media (max-width: 768px) {
+        .form-container {
+          flex-direction: column; /* Cambia a una sola columna */
+        }
+        .column1 {
+          padding:20px;
+        }
+        .column2 {
+          padding:20px;
+        }
+        /* Restaurar el ancho completo de los elementos internos */
+        label,
+        input[type="text"],
+        textarea,
+        input[type="file"],
+        select,
+        button {
+          width: 100%;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="title">
+      <img src="img/logo.png" alt="Icono" />
+      <h1>UABCS AVISA</h1>
+    </div>
+    <div class="breadcrumb">
+      <p><a href="#">Inicio</a> > Registrar Reporte</p>
+    </div>
+
+    <main>
+      <section class="content">
+        <div class="form-container">
+          <div class="column1">
+            <label for="nombre">Titulo descriptivo</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="comentario">Descripción del problema</label>
+            <textarea id="comentario" name="comentario" rows="4"></textarea>
+
+            <label for="archivo">Agregar un archivo multimedia</label>
+            <input type="file" id="archivo" name="archivo" />
+          </div>
+
+          <div class="column2">
+            <label for="mapa">Selecciona la ubicación del problema en el mapa</label>
+            <div class="map-container">
+              <img class="map-img" src="img/map.png" />
+            </div>
+
+            <button class="send-btn" type="submit">Enviar Reporte</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>UABCS &copy; 2023</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
